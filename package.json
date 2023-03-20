@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/functions": "^1.4.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^13.1.6",
+    "typescript": "^5.0.2"
+  }
+}
