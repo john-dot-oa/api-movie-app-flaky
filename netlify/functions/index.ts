@@ -1,10 +1,10 @@
 import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
+import middy from "middy";
+import { cors } from "middy/middlewares";
+
 import movies from "../../movies.json";
 
-const handler: Handler = async (
-  event: HandlerEvent,
-  context: HandlerContext
-) => {
+const index: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   const random = Math.random();
 
   if (random < 0.15) {
@@ -26,4 +26,4 @@ const handler: Handler = async (
   };
 };
 
-export { handler };
+export const handler = middy(index).use(cors());
